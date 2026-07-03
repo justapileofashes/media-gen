@@ -1,0 +1,29 @@
+# Smithery configuration file: https://smithery.ai/docs/config#smitheryyaml
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties:
+      openaiApiKey:
+        type: string
+        description: OpenAI API key (optional; enables generate_image/generate_video via gpt-image-1/Sora)
+      geminiApiKey:
+        type: string
+        description: Gemini API key (optional; enables generate_image/generate_video via Imagen/Veo)
+      falKey:
+        type: string
+        description: fal.ai API key (optional; enables generate_image/generate_video via FLUX/Kling)
+      mediaOutputDir:
+        type: string
+        description: Output directory for generated media (optional; defaults to ./generated-media)
+  commandFunction: |-
+    (config) => ({
+      command: 'node',
+      args: ['dist/index.js'],
+      env: {
+        ...(config.openaiApiKey ? { OPENAI_API_KEY: config.openaiApiKey } : {}),
+        ...(config.geminiApiKey ? { GEMINI_API_KEY: config.geminiApiKey } : {}),
+        ...(config.falKey ? { FAL_KEY: config.falKey } : {}),
+        ...(config.mediaOutputDir ? { MEDIA_OUTPUT_DIR: config.mediaOutputDir } : {})
+      }
+    })
