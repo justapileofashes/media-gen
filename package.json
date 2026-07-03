@@ -1,0 +1,40 @@
+{
+  "name": "media-gen",
+  "version": "0.1.0",
+  "description": "MCP server: Claude-rendered images/video + BYOK photoreal generation",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justapileofashes/media-gen.git"
+  },
+  "bin": {
+    "media-gen": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "test:unit": "vitest run test/unit",
+    "test:integration": "vitest run test/integration",
+    "coverage": "vitest run --coverage"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@fal-ai/client": "^1.10.1",
+    "@google/genai": "^2.10.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "ffmpeg-static": "^5.3.0",
+    "openai": "^6.45.0",
+    "playwright": "^1.61.1",
+    "sharp": "^0.35.3",
+    "zod": "^3.25.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^3.0.0",
+    "typescript": "^5.7.0",
+    "vitest": "^3.0.0"
+  }
+}

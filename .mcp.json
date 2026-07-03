@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "media-gen": {
+      "command": "node",
+      "args": ["dist/index.js"],
+      "env": {
+        "MEDIA_OUTPUT_DIR": "${MEDIA_OUTPUT_DIR}",
+        "OPENAI_API_KEY": "${OPENAI_API_KEY}",
+        "GEMINI_API_KEY": "${GEMINI_API_KEY}",
+        "FAL_KEY": "${FAL_KEY}"
+      }
+    }
+  }
+}
