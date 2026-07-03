@@ -8,6 +8,7 @@
     "type": "git",
     "url": "https://github.com/justapileofashes/media-gen.git"
   },
+  "mcpName": "io.github.justapileofashes/media-gen",
   "bin": {
     "media-gen": "dist/index.js"
   },

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.justapileofashes/media-gen",
+  "description": "MCP server for Claude Code: free Claude-authored image/video rendering (SVG/HTML/canvas, no API keys) plus optional BYOK photoreal generation via OpenAI, Gemini, or fal.ai.",
+  "repository": {
+    "url": "https://github.com/justapileofashes/media-gen",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "media-gen",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "MEDIA_OUTPUT_DIR",
+          "description": "Output directory for generated media (optional; defaults to ./generated-media)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": false
+        },
+        {
+          "name": "OPENAI_API_KEY",
+          "description": "OpenAI API key (optional; enables generate_image/generate_video via gpt-image-1/Sora)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true
+        },
+        {
+          "name": "GEMINI_API_KEY",
+          "description": "Gemini API key (optional; enables generate_image/generate_video via Imagen/Veo)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true
+        },
+        {
+          "name": "FAL_KEY",
+          "description": "fal.ai API key (optional; enables generate_image/generate_video via FLUX/Kling)",
+          "isRequired": false,
+          "format": "string",
+          "isSecret": true
+        }
+      ]
+    }
+  ]
+}
